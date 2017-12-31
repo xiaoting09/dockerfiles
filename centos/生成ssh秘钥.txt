@@ -1,0 +1,9 @@
+ssh-keygen -t rsa -b 2048 -f /etc/ssh/ssh_host_rsa_key
+cp /etc/ssh/ssh_host_rsa_key /etc/ssh/ssh_host_rsa_key.pub   /Dockerfile存放目录
+cat ssh_host_rsa_key.pub>authorized_keys
+
+
+
+docker build -t 镜像名称:版本号 .
+##启动方式
+docker run -d -p 宿主机端口号:22  镜像名称:版本号
